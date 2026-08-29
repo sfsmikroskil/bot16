@@ -3,7 +3,7 @@ from playwright.async_api import async_playwright
 import pytesseract
 import random as r
 import json
-from data import contacts
+from data16 import contacts
 from PIL import Image
 
 def update_state_file(new_index):
