@@ -11,6 +11,8 @@ def updateIndex(new_index):
     """Fungsi untuk memperbarui nilai CURRENT_INDEX di file state.py"""
     with open('state.py', 'w') as f:
         f.write(f"last_index = {new_index}\n")
+    with open("state.py", "r") as f:
+        print("Isi state:", f.read())
 
 def getHP():
     hpAwalan = ["0852", "0822", "0853", "0857", "0813", "0822", "0823"]
