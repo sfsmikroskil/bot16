@@ -1,1 +1,1 @@
-CURRENT_INDEX = 0
+last_index = 0
