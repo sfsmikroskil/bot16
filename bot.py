@@ -3,13 +3,14 @@ from playwright.async_api import async_playwright
 import pytesseract
 import random as r
 import json
+import state
 from data16 import contacts
 from PIL import Image
 
-def update_state_file(new_index):
+def updateIndex(new_index):
     """Fungsi untuk memperbarui nilai CURRENT_INDEX di file state.py"""
     with open('state.py', 'w') as f:
-        f.write(f"CURRENT_INDEX = {new_index}\n")
+        f.write(f"last_index = {new_index}\n")
 
 def getHP():
     hpAwalan = ["0852", "0822", "0853", "0857", "0813", "0822", "0823"]
@@ -41,22 +42,22 @@ async def main(nama, email, c):
         await page.fill("#profile_password", "Admin123")
         await page.fill("#profile_password_confirmation", "Admin123")
         await page.check("input.form-check-input")
-
+        
+        await page.wait_for_timeout(1000)
+        await page.screenshot(path=f"{c}_regis.png")
         # Simpan index
-        with open("./state.json", "w", encoding="utf-8") as f:
-            print(f"Tulis ke {c+1}")
-            json.dump({"last_index": c + 1}, f)
+        updateIndex(c+1)
+        #with open("./state.json", "w", encoding="utf-8") as f:
+        #    print(f"Tulis ke {c+1}")
+        #    json.dump({"last_index": c + 1}, f)
         # 3. Regis
         #print("Mengeklik tombol submit...")
         await page.click("button[type='submit']")
-
-        await page.wait_for_timeout(5000)
-        await page.screenshot(path="login.png")
         await asyncio.sleep(3) # Tunggu elemen/canvas termuat sempurna
         
         await page.mouse.click(360, 1008)
         await page.wait_for_timeout(2000)
-        await page.screenshot(path="lewati.png")
+        await page.screenshot(path=f"{c}lewati.png")
 
         # 4. Lewati Video
         #print("Lewati Selesai")
@@ -101,10 +102,11 @@ if __name__ == "__main__":
     4
     # Baca state    
     try:
-        with open("state.json", "r", encoding="utf-8") as f:
-            state = json.load(f)
-            last_index = state.get("last_index", 0)
-    except FileNotFoundError:
+        #with open("state.json", "r", encoding="utf-8") as f:
+        #    state = json.load(f)
+        #    last_index = state.get("last_index", 0)
+        last_index = state.last_index
+    except:
         last_index = 0
     mulaiDari = last_index
     print("Mulai...")
