@@ -43,7 +43,8 @@ async def main(nama, email, c):
         await page.check("input.form-check-input")
 
         # Simpan index
-        with open("state.json", "w", encoding="utf-8") as f:
+        with open("./state.json", "w", encoding="utf-8") as f:
+            print(f"Tulis ke {c+1}")
             json.dump({"last_index": c + 1}, f)
         # 3. Regis
         #print("Mengeklik tombol submit...")
