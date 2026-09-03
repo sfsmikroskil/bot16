@@ -104,7 +104,7 @@ async def main(nama, email, c):
         await page.screenshot(path=f"{c}_6booth.png")
         await page.keyboard.press("Enter")
         await page.wait_for_timeout(2000)
-        await page.keyboard.press("Enter")
+        await page.mouse.click(601, 516)
         await page.wait_for_timeout(2000)
         await page.screenshot(path=f"{c}_7booth.png")
         #await page.screenshot(path=f"{c}_1.png")
@@ -134,7 +134,7 @@ if __name__ == "__main__":
     #except:
         #last_index = 0
     #mulaiDari = last_index
-    mulaiDari=6
+    mulaiDari=7
     print("Mulai...")
     for i in range (mulaiDari, mulaiDari+jumlah):
         contact = contacts[i]        
