@@ -98,7 +98,7 @@ if __name__ == "__main__":
     #except:
         #last_index = 0
     #mulaiDari = last_index
-    mulaiDari=7
+    mulaiDari=0
     print("Mulai...")
     for i in range (mulaiDari, mulaiDari+jumlah):
         contact = contacts[i]        
