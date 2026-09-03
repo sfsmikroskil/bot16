@@ -71,9 +71,9 @@ async def main(nama, email, c):
         #Close banner
         await page.wait_for_timeout(3000)
         #Tombol close banner
-       await page.mouse.click(592, 531)
+        await page.mouse.click(592, 531)
        #await page.wait_for_timeout(2000)
-       await page.screenshot(path=f"{c}_3banner.png")
+        await page.screenshot(path=f"{c}_3banner.png")
 
         #print("Close banner selesai")
 
@@ -83,13 +83,13 @@ async def main(nama, email, c):
         
 
         # 6. Masukk Hall
-       #await page.wait_for_timeout(2000)
-       #await page.mouse.click(277, 654)
-       #await page.wait_for_timeout(1000)
-       #await page.screenshot(path=f"{c}_5hall.png")
+        await page.wait_for_timeout(2000)
+        await page.mouse.click(277, 654)
+        await page.wait_for_timeout(1000)
+        await page.screenshot(path=f"{c}_5hall.png")
 
-        #await page.wait_for_timeout(2000)
-        #await page.mouse.click(291, 623)
+        await page.wait_for_timeout(2000)
+        await page.mouse.click(291, 623)
         #await page.wait_for_timeout(1000)
         #await page.screenshot(path=f"{c}_5hall2.png")
         #print("Masuk Hall selesai")
@@ -132,7 +132,7 @@ if __name__ == "__main__":
     #except:
         #last_index = 0
     #mulaiDari = last_index
-    mulaiDari=3
+    mulaiDari=4
     print("Mulai...")
     for i in range (mulaiDari, mulaiDari+jumlah):
         contact = contacts[i]        
