@@ -32,9 +32,6 @@ async def main(nama, email, c):
         # 1. Buka halaman website
         #print("Membuka halaman website...")
         await page.goto("https://virtual-expo.lkpp.go.id/visitor/register")
-        
-      
-        #print("Mengisi formulir...")
         await page.wait_for_timeout(2000)
         # 2. Klik cookies
         await page.mouse.click(620, 1236)
@@ -50,51 +47,28 @@ async def main(nama, email, c):
         
         await page.wait_for_timeout(1000)
         await page.screenshot(path=f"{c}_0reg.png")
-        # Simpan index
-        #updateIndex(c+1)
-        #with open("./state.json", "w", encoding="utf-8") as f:
-        #    print(f"Tulis ke {c+1}")
-        #    json.dump({"last_index": c + 1}, f)
         # 3. Regis
-        #print("Mengeklik tombol submit...")
         await page.click("button[type='submit']")
         await page.wait_for_timeout(5000)
         await page.screenshot(path=f"{c}_1login.png")
         await page.wait_for_timeout(2000)
-        #Tombol lewati
+        # 4. Tombol lewati
         await page.mouse.click(352, 1007)
         await page.wait_for_timeout(3000)
         await page.screenshot(path=f"{c}_2lewati.png")
 
-        # 4. Lewati Video
-        #print("Lewati Selesai")
         #Close banner
         await page.wait_for_timeout(3000)
         #Tombol close banner
         await page.mouse.click(592, 531)
-       #await page.wait_for_timeout(2000)
+        #await page.wait_for_timeout(2000)
         await page.screenshot(path=f"{c}_3banner.png")
-
-        #print("Close banner selesai")
-
-        
-       #await page.wait_for_timeout(1000)
-       #await page.screenshot(path=f"{c}_4cokies.png")
-        
 
         # 6. Masukk Hall
         await page.wait_for_timeout(2000)
         await page.mouse.click(277, 654)
         await page.wait_for_timeout(1000)
         await page.screenshot(path=f"{c}_5hall.png")
-
-        #await page.wait_for_timeout(2000)
-        #await page.mouse.click(291, 623)
-        #await page.wait_for_timeout(1000)
-        #await page.screenshot(path=f"{c}_5hall2.png")
-        #print("Masuk Hall selesai")
-        
-
         # 7. Filter booth
         await page.mouse.click(420, 30)
         await page.wait_for_timeout(1000)
@@ -107,16 +81,6 @@ async def main(nama, email, c):
         await page.mouse.click(601, 516)
         await page.wait_for_timeout(2000)
         await page.screenshot(path=f"{c}_7booth.png")
-        #await page.screenshot(path=f"{c}_1.png")
-
-        #8. Whatsapp
-        #await page.mouse.click(370, 770)
-        #await page.wait_for_timeout(2000)
-
-        #Live chat
-        #await page.mouse.click(360, 669)
-        #await page.wait_for_timeout(2000)
-        #await page.screenshot(path=f"{c}_2.png")
 
         print(f"Akun : ({c}) {nama} | Selesai")
         await browser.close()
