@@ -1,12 +1,5 @@
 contacts = [
-     {'nama': 'ZANUAR RINDANG', 'email': 'zanuar.rindang@kemenimipas.go.id'},
-    {'nama': 'ZANUAR YUSUP', 'email': 'zanuar.yusup81@kemenimipas.go.id'},
-    {'nama': 'ZAPARIA', 'email': 'zaparia81@kemenimipas.go.id'},
-    {'nama': 'ZAQI YUNAHAR', 'email': 'zaqi.yunahar82@kemenimipas.go.id'},
-    {'nama': 'ZARA INTAN SARI', 'email': 'zara.intan.sari94@kemenimipas.go.id'},
-    {'nama': 'ZARA LASES PRISSESA, A.Md. Kep', 'email': 'Zara.Lases@kemenimipas.go.id'},
-    {'nama': 'ZARDANAR', 'email': 'zardanar@kemenimipas.go.id'},
-    {'nama': 'ZAREFO JUDHA EKA PUTRA', 'email': 'zarefo.judha@kemenimipas.go.id'},
+      {'nama': 'ZAREFO JUDHA EKA PUTRA', 'email': 'zarefo.judha@kemenimipas.go.id'},
     {'nama': 'ZARI PUJIASTUTI', 'email': 'zari.pujiastuti@kemenimipas.go.id'},
     {'nama': 'ZARIHUL ANJA MUHAMMAD', 'email': 'zarihul.anja@kemenimipas.go.id'},
     {'nama': 'ZARKANDI', 'email': 'zarkandi68@kemenimipas.go.id'},
