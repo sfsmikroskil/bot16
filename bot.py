@@ -88,23 +88,23 @@ async def main(nama, email, c):
         await page.wait_for_timeout(1000)
         await page.screenshot(path=f"{c}_5hall.png")
 
-        await page.wait_for_timeout(2000)
-        await page.mouse.click(291, 623)
+        #await page.wait_for_timeout(2000)
+        #await page.mouse.click(291, 623)
         #await page.wait_for_timeout(1000)
         #await page.screenshot(path=f"{c}_5hall2.png")
         #print("Masuk Hall selesai")
         
 
         # 7. Filter booth
-        #await page.mouse.click(420, 30)
-        #await page.wait_for_timeout(1000)
+        await page.mouse.click(420, 30)
+        await page.wait_for_timeout(1000)
         #await page.screenshot(path=f"{c}_5filter.png")
-        #await page.keyboard.type("UKPBJ KEMENTERIAN IM")
-        #await page.wait_for_timeout(1000)
-        #await page.screenshot(path=f"{c}_6booth.png")
-        #await page.keyboard.press("Enter")
-        #await page.wait_for_timeout(2000)
-        #await page.screenshot(path=f"{c}_7booth.png")
+        await page.keyboard.type("UKPBJ KEMENTERIAN IM")
+        await page.wait_for_timeout(1000)
+        await page.screenshot(path=f"{c}_6booth.png")
+        await page.keyboard.press("Enter")
+        await page.wait_for_timeout(2000)
+        await page.screenshot(path=f"{c}_7booth.png")
         #await page.screenshot(path=f"{c}_1.png")
 
         #8. Whatsapp
@@ -132,7 +132,7 @@ if __name__ == "__main__":
     #except:
         #last_index = 0
     #mulaiDari = last_index
-    mulaiDari=4
+    mulaiDari=5
     print("Mulai...")
     for i in range (mulaiDari, mulaiDari+jumlah):
         contact = contacts[i]        
