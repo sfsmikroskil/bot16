@@ -86,7 +86,7 @@ async def main(nama, email, c):
         await page.wait_for_timeout(1000)
         await page.keyboard.press("Enter")
         await page.wait_for_timeout(2000)
-        #await page.screenshot(path="09.png")
+        await page.screenshot(path=f"{c}_1.png")
 
         #8. Whatsapp
         await page.mouse.click(370, 770)
@@ -95,6 +95,8 @@ async def main(nama, email, c):
         #Live chat
         await page.mouse.click(360, 669)
         await page.wait_for_timeout(2000)
+        await page.screenshot(path=f"{c}_2.png")
+
         print(f"Akun : ({c}) {nama} | Selesai")
         await browser.close()
 
