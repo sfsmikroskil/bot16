@@ -46,9 +46,9 @@ async def main(nama, email, c):
         await page.check("input.form-check-input")
         
         await page.wait_for_timeout(1000)
-        await page.screenshot(path=f"{c}_regis.png")
+        await page.screenshot(path=f"{c}_0reg.png")
         # Simpan index
-        updateIndex(c+1)
+        #updateIndex(c+1)
         #with open("./state.json", "w", encoding="utf-8") as f:
         #    print(f"Tulis ke {c+1}")
         #    json.dump({"last_index": c + 1}, f)
@@ -59,33 +59,40 @@ async def main(nama, email, c):
         
         await page.mouse.click(360, 1008)
         await page.wait_for_timeout(2000)
-        await page.screenshot(path=f"{c}lewati.png")
+        await page.screenshot(path=f"{c}_1lewati.png")
 
         # 4. Lewati Video
         #print("Lewati Selesai")
         #Close banner
-        await page.mouse.click(593, 530)
+        await page.wait_for_timeout(3000)
+        await page.mouse.click(592, 531)
         await page.wait_for_timeout(2000)
+        await page.screenshot(path=f"{c}_2banner.png")
+
         #print("Close banner selesai")
 
         # 5. Klik cookies
         await page.mouse.click(620, 1236)
+        await page.wait_for_timeout(1000)
+        await page.screenshot(path=f"{c}_3cokies.png")
         await page.wait_for_timeout(3000)
-
         # 6. Masukk Hall
         await page.mouse.click(277, 654)
         await page.wait_for_timeout(2000)
+        await page.screenshot(path=f"{c}_4hall.png")
         #print("Masuk Hall selesai")
         
 
         # 7. Filter booth
         await page.mouse.click(420, 30)
         await page.wait_for_timeout(1000)
-        
+        await page.screenshot(path=f"{c}_5filter.png")
         await page.keyboard.type("UKPBJ KEMENTERIAN IM")
         await page.wait_for_timeout(1000)
+        await page.screenshot(path=f"{c}_6booth.png")
         await page.keyboard.press("Enter")
         await page.wait_for_timeout(2000)
+        await page.screenshot(path=f"{c}_7booth.png")
         await page.screenshot(path=f"{c}_1.png")
 
         #8. Whatsapp
