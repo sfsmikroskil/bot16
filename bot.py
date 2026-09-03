@@ -2,17 +2,8 @@ import asyncio
 from playwright.async_api import async_playwright
 import pytesseract
 import random as r
-import json
-import state
 from data16 import contacts
 from PIL import Image
-
-def updateIndex(new_index):
-    """Fungsi untuk memperbarui nilai CURRENT_INDEX di file state.py"""
-    with open('state.py', 'w') as f:
-        f.write(f"last_index = {new_index}\n")
-    with open("state.py", "r") as f:
-        print("Isi state:", f.read())
 
 def getHP():
     hpAwalan = ["0852", "0822", "0853", "0857", "0813", "0822", "0823"]
@@ -46,48 +37,53 @@ async def main(nama, email, c):
         await page.check("input.form-check-input")
         
         await page.wait_for_timeout(1000)
-        await page.screenshot(path=f"{c}_0reg.png")
+        if(c==0):
+            await page.screenshot(path=f"{c}_0reg.png")
         # 3. Regis
         await page.click("button[type='submit']")
         await page.wait_for_timeout(5000)
-        await page.screenshot(path=f"{c}_1login.png")
+        #await page.screenshot(path=f"{c}_1login.png")
         await page.wait_for_timeout(2000)
         # 4. Tombol lewati
         await page.mouse.click(352, 1007)
         await page.wait_for_timeout(3000)
-        await page.screenshot(path=f"{c}_2lewati.png")
+        #await page.screenshot(path=f"{c}_2lewati.png")
 
         #Close banner
         await page.wait_for_timeout(3000)
         #Tombol close banner
         await page.mouse.click(592, 531)
         #await page.wait_for_timeout(2000)
-        await page.screenshot(path=f"{c}_3banner.png")
+        #await page.screenshot(path=f"{c}_3banner.png")
 
         # 6. Masukk Hall
         await page.wait_for_timeout(2000)
         await page.mouse.click(277, 654)
         await page.wait_for_timeout(1000)
-        await page.screenshot(path=f"{c}_5hall.png")
+        #await page.screenshot(path=f"{c}_4hall.png")
         # 7. Filter booth
         await page.mouse.click(420, 30)
         await page.wait_for_timeout(1000)
         #await page.screenshot(path=f"{c}_5filter.png")
         await page.keyboard.type("UKPBJ KEMENTERIAN IM")
         await page.wait_for_timeout(1000)
-        await page.screenshot(path=f"{c}_6booth.png")
+        #await page.screenshot(path=f"{c}_6booth.png")
         await page.keyboard.press("Enter")
+        await page.wait_for_timeout(2000)
+        await page.keyboard.press("Enter")
+        await page.mouse.click(601, 516)
         await page.wait_for_timeout(2000)
         await page.mouse.click(601, 516)
         await page.wait_for_timeout(2000)
-        await page.screenshot(path=f"{c}_7booth.png")
+        if(c==0):
+            await page.screenshot(path=f"{c}_7booth.png")
 
         print(f"Akun : ({c}) {nama} | Selesai")
         await browser.close()
 
 if __name__ == "__main__":
-    jumlah = 1
-    mulaiDari=1
+    jumlah = 2
+    mulaiDari = 0
     print("Mulai...")
     for i in range (mulaiDari, mulaiDari+jumlah):
         contact = contacts[i]        
