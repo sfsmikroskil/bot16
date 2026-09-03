@@ -1,7 +1,5 @@
 contacts = [
-    {'nama': 'ZANUAR ADISETYA FIRMANSYAH', 'email': 'zanuar.adisetya@kemenimipas.go.id'},
-    {'nama': 'ZANUAR PUDJIPRAKOSO', 'email': 'zanuar.pudjiprakoso96@kemenimipas.go.id'},
-    {'nama': 'ZANUAR RINDANG', 'email': 'zanuar.rindang@kemenimipas.go.id'},
+     {'nama': 'ZANUAR RINDANG', 'email': 'zanuar.rindang@kemenimipas.go.id'},
     {'nama': 'ZANUAR YUSUP', 'email': 'zanuar.yusup81@kemenimipas.go.id'},
     {'nama': 'ZAPARIA', 'email': 'zaparia81@kemenimipas.go.id'},
     {'nama': 'ZAQI YUNAHAR', 'email': 'zaqi.yunahar82@kemenimipas.go.id'},
