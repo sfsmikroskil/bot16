@@ -105,14 +105,15 @@ if __name__ == "__main__":
     last_index = 0
     4
     # Baca state    
-    try:
+    #try:
         #with open("state.json", "r", encoding="utf-8") as f:
         #    state = json.load(f)
         #    last_index = state.get("last_index", 0)
-        last_index = state.last_index
-    except:
-        last_index = 0
-    mulaiDari = last_index
+        #last_index = state.last_index
+    #except:
+        #last_index = 0
+    #mulaiDari = last_index
+    mulaiDari=0
     print("Mulai...")
     for i in range (mulaiDari, mulaiDari+jumlah):
         contact = contacts[i]        
