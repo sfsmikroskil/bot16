@@ -69,7 +69,7 @@ async def main(nama, email, c):
         # 4. Lewati Video
         #print("Lewati Selesai")
         #Close banner
-       await page.wait_for_timeout(3000)
+        await page.wait_for_timeout(3000)
         #Tombol close banner
        await page.mouse.click(592, 531)
        #await page.wait_for_timeout(2000)
