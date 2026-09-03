@@ -71,9 +71,8 @@ async def main(nama, email, c):
         await page.keyboard.press("Enter")
         await page.wait_for_timeout(2000)
         await page.keyboard.press("Enter")
-        await page.mouse.click(601, 516)
         await page.wait_for_timeout(2000)
-        await page.mouse.click(601, 516)
+        await page.mouse.click(170, 662)
         await page.wait_for_timeout(2000)
         if(c==0):
             await page.screenshot(path=f"{c}_7booth.png")
@@ -83,7 +82,7 @@ async def main(nama, email, c):
 
 if __name__ == "__main__":
     jumlah = 2
-    mulaiDari = 0
+    mulaiDari = 2
     print("Mulai...")
     for i in range (mulaiDari, mulaiDari+jumlah):
         contact = contacts[i]        
