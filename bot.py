@@ -56,53 +56,63 @@ async def main(nama, email, c):
         #print("Mengeklik tombol submit...")
         await page.click("button[type='submit']")
         await asyncio.sleep(3) # Tunggu elemen/canvas termuat sempurna
-        
-        await page.mouse.click(360, 1008)
+        await page.screenshot(path=f"{c}_1login.png")
         await page.wait_for_timeout(2000)
-        await page.screenshot(path=f"{c}_1lewati.png")
+        #Tombol lewati
+        await page.mouse.click(350, 1070)
+        await page.wait_for_timeout(1000)
+        await page.screenshot(path=f"{c}_2lewati.png")
 
         # 4. Lewati Video
         #print("Lewati Selesai")
         #Close banner
         await page.wait_for_timeout(3000)
+        #Tombol close banner
         await page.mouse.click(592, 531)
         await page.wait_for_timeout(2000)
-        await page.screenshot(path=f"{c}_2banner.png")
+        await page.screenshot(path=f"{c}_3banner.png")
 
         #print("Close banner selesai")
 
         # 5. Klik cookies
         await page.mouse.click(620, 1236)
         await page.wait_for_timeout(1000)
-        await page.screenshot(path=f"{c}_3cokies.png")
-        await page.wait_for_timeout(3000)
+        await page.screenshot(path=f"{c}_4cokies.png")
+        
+
         # 6. Masukk Hall
-        await page.mouse.click(277, 654)
         await page.wait_for_timeout(2000)
-        await page.screenshot(path=f"{c}_4hall.png")
+        await page.mouse.click(277, 654)
+        await page.wait_for_timeout(1000)
+        await page.screenshot(path=f"{c}_5hall.png")
+
+        await page.wait_for_timeout(2000)
+        await page.mouse.click(291, 623)
+        await page.wait_for_timeout(1000)
+        await page.screenshot(path=f"{c}_5hall2.png")
         #print("Masuk Hall selesai")
         
 
         # 7. Filter booth
-        await page.mouse.click(420, 30)
-        await page.wait_for_timeout(1000)
-        await page.screenshot(path=f"{c}_5filter.png")
-        await page.keyboard.type("UKPBJ KEMENTERIAN IM")
-        await page.wait_for_timeout(1000)
-        await page.screenshot(path=f"{c}_6booth.png")
-        await page.keyboard.press("Enter")
-        await page.wait_for_timeout(2000)
-        await page.screenshot(path=f"{c}_7booth.png")
-        await page.screenshot(path=f"{c}_1.png")
+        #await page.mouse.click(420, 30)
+        #await page.wait_for_timeout(1000)
+        #await page.screenshot(path=f"{c}_5filter.png")
+        #await page.keyboard.type("UKPBJ KEMENTERIAN IM")
+        #await page.wait_for_timeout(1000)
+        #await page.screenshot(path=f"{c}_6booth.png")
+        #await page.keyboard.press("Enter")
+        #await page.wait_for_timeout(2000)
+        #await page.screenshot(path=f"{c}_7booth.png")
+        #await page.screenshot(path=f"{c}_1.png")
 
         #8. Whatsapp
-        await page.mouse.click(370, 770)
-        await page.wait_for_timeout(2000)
+        #await page.mouse.click(370, 770)
+        #await page.wait_for_timeout(2000)
 
         #Live chat
-        await page.mouse.click(360, 669)
-        await page.wait_for_timeout(2000)
-        await page.screenshot(path=f"{c}_2.png")
+        #await page.mouse.click(360, 669)
+        #await page.wait_for_timeout(2000)
+        #await page.screenshot(path=f"{c}_2.png")
 
         print(f"Akun : ({c}) {nama} | Selesai")
         await browser.close()
