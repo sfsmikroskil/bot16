@@ -37,7 +37,7 @@ async def main(nama, email, c):
         await page.check("input.form-check-input")
         
         await page.wait_for_timeout(1000)
-        if(c==0 or true):
+        if(c==0 or True):
             await page.screenshot(path=f"{c}_0reg.png")
         # 3. Regis
         await page.click("button[type='submit']")
@@ -74,7 +74,7 @@ async def main(nama, email, c):
         await page.wait_for_timeout(2000)
         await page.mouse.click(170, 662)
         await page.wait_for_timeout(2000)
-        if(c==0 or true):
+        if(c==0 or True):
             await page.screenshot(path=f"{c}_7booth.png")
 
         print(f"Akun : ({c}) {nama} | Selesai")
