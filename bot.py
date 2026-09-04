@@ -43,51 +43,50 @@ async def main(nama, email, c):
         await page.click("button[type='submit']")
         await page.wait_for_timeout(5000)
         #await page.screenshot(path=f"{c}_1login.png")
-        await page.wait_for_timeout(2000)
+        #await page.wait_for_timeout(2000)
         # 4. Tombol lewati
         await page.mouse.click(352, 1007)
-        await page.wait_for_timeout(3000)
+        await page.wait_for_timeout(5000)
         #await page.screenshot(path=f"{c}_2lewati.png")
 
         #Close banner
-        await page.wait_for_timeout(3000)
+        #await page.wait_for_timeout(3000)
         #Tombol close banner
         await page.mouse.click(592, 531)
         #await page.wait_for_timeout(2000)
         #await page.screenshot(path=f"{c}_3banner.png")
 
         # 6. Masukk Hall
-        await page.wait_for_timeout(2000)
+        await page.wait_for_timeout(1000)
         await page.mouse.click(277, 654)
-        await page.wait_for_timeout(5000)
+        await page.wait_for_timeout(3000)
         #await page.screenshot(path=f"{c}_4hall.png")
         # 7. Filter booth
         await page.mouse.click(420, 30)
-        await page.wait_for_timeout(1000)
+        await page.wait_for_timeout(500)
         #await page.screenshot(path=f"{c}_5filter.png")
         await page.keyboard.type("imi")
-        await page.wait_for_timeout(2000)
+        await page.wait_for_timeout(500)
         #await page.screenshot(path=f"{c}_6booth.png")
         await page.keyboard.press("Enter")
-        await page.wait_for_timeout(1000)
+        await page.wait_for_timeout(500)
         await page.mouse.click(420, 30)
         await page.keyboard.press("Enter")
         # Sudah masuk boot
         if(c==0):
             await page.screenshot(path=f"{c}_2booth.png")
-        await page.wait_for_timeout(2000)
-        
-        
+        await page.wait_for_timeout(2000)               
         await page.mouse.click(470, 830) #info
         #await page.mouse.click(357, 624) #video
         #await page.mouse.click(170, 662) #poster kiri
         #await page.mouse.click(540, 662) #poster kanan
-        await page.wait_for_timeout(2000)
+        
         #await page.screenshot(path=f"{c}_3info.png")
         #await page.wait_for_timeout(2000)
         #await page.mouse.click(170, 662) 
         #await page.wait_for_timeout(2000)
         if(c==0):
+            await page.wait_for_timeout(2000)
             await page.screenshot(path=f"{c}_9last.png")
 
         print(f"Akun : ({c}) {nama} | Selesai")
