@@ -72,20 +72,23 @@ async def main(nama, email, c):
         await page.wait_for_timeout(1000)
         await page.mouse.click(420, 30)
         await page.keyboard.press("Enter")
-        await page.screenshot(path=f"{c}_2booth.png")
+        # Sudah masuk boot
+        if(c==0):
+            await page.screenshot(path=f"{c}_2booth.png")
         await page.wait_for_timeout(2000)
-        await page.mouse.click(277, 654)
-        await page.wait_for_timeout(2000)
-        await page.screenshot(path=f"{c}_3info.png")
         
+        
+        await page.mouse.click(470, 830) #info
         #await page.mouse.click(357, 624) #video
         #await page.mouse.click(170, 662) #poster kiri
         #await page.mouse.click(540, 662) #poster kanan
+        await page.wait_for_timeout(2000)
+        #await page.screenshot(path=f"{c}_3info.png")
         #await page.wait_for_timeout(2000)
         #await page.mouse.click(170, 662) 
         #await page.wait_for_timeout(2000)
-        #if(c==0):
-        #    await page.screenshot(path=f"{c}_7booth.png")
+        if(c==0):
+            await page.screenshot(path=f"{c}_9last.png")
 
         print(f"Akun : ({c}) {nama} | Selesai")
         await browser.close()
