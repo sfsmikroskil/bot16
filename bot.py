@@ -82,7 +82,7 @@ async def main(nama, email, c):
         #await page.mouse.click(170, 662) #poster kiri
         #await page.mouse.click(540, 662) #poster kanan
 
-        if(c==0):
+        if(c==0 or True):
             await page.wait_for_timeout(2000)
             await page.screenshot(path=f"{c}_9last.png")
 
@@ -91,7 +91,7 @@ async def main(nama, email, c):
         await browser.close()
 
 if __name__ == "__main__":
-    jumlah = 1
+    jumlah = 10
     mulaiDari = 0
     print("Mulai...")
     for i in range (mulaiDari, mulaiDari+jumlah):
