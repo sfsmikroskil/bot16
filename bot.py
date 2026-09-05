@@ -35,7 +35,7 @@ async def main(nama, email, c):
         await page.fill("#profile_password", "Admin123")
         await page.fill("#profile_password_confirmation", "Admin123")
         await page.check("input.form-check-input")
-        
+
         await page.wait_for_timeout(1000)
         if(c==0):
             await page.screenshot(path=f"{c}_0reg.png")
@@ -63,33 +63,31 @@ async def main(nama, email, c):
         #await page.screenshot(path=f"{c}_4hall.png")
         # 7. Filter booth
         await page.mouse.click(420, 30)
-        await page.wait_for_timeout(500)
+        await page.wait_for_timeout(1000)
         #await page.screenshot(path=f"{c}_5filter.png")
-        await page.keyboard.type("imi")
-        await page.wait_for_timeout(500)
+        await page.keyboard.type("imigra")
+        await page.wait_for_timeout(1000)
         #await page.screenshot(path=f"{c}_6booth.png")
         await page.keyboard.press("Enter")
-        await page.wait_for_timeout(500)
+        await page.wait_for_timeout(1000)
         await page.mouse.click(420, 30)
+        await page.keyboard.type("imigra")
+        await page.wait_for_timeout(1000)
         await page.keyboard.press("Enter")
         # Sudah masuk boot
-        if(c==0):
-            await page.screenshot(path=f"{c}_2booth.png")
-        await page.wait_for_timeout(2000)               
+
+        await page.wait_for_timeout(2000)
         await page.mouse.click(470, 830) #info
         #await page.mouse.click(357, 624) #video
         #await page.mouse.click(170, 662) #poster kiri
         #await page.mouse.click(540, 662) #poster kanan
-        
-        #await page.screenshot(path=f"{c}_3info.png")
-        #await page.wait_for_timeout(2000)
-        #await page.mouse.click(170, 662) 
-        #await page.wait_for_timeout(2000)
+
         if(c==0):
             await page.wait_for_timeout(2000)
             await page.screenshot(path=f"{c}_9last.png")
 
         print(f"Akun : ({c}) {nama} | Selesai")
+        await page.wait_for_timeout(2000)
         await browser.close()
 
 if __name__ == "__main__":
@@ -97,7 +95,7 @@ if __name__ == "__main__":
     mulaiDari = 0
     print("Mulai...")
     for i in range (mulaiDari, mulaiDari+jumlah):
-        contact = contacts[i]        
+        contact = contacts[i]
         nama = contact["nama"]
         email = contact["email"]
         c = i
